@@ -7,9 +7,9 @@ const initialState = {
 // action - what to do when a action a dispatched
 const PokemonReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "SET_PokemonList":
+    case "SET_POKEMONLIST":
       return { ...state, PokemonList: action.payload }; // when the action type is Set pokemon list : it creates a new state object with the PokemonList property updated ( Details remains the same ) to the action.payload. The action.payload is typically the new data that you want to set in the state.
-    case "SET_PokemonDetails":
+    case "SET_POKEMONDETAILS":
       return { ...state, PokemonDetails: action.payload };
     default:
       return state;

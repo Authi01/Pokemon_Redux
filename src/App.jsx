@@ -4,6 +4,7 @@ import ProductListingPage from "./Pages/ProductListingPage";
 import ProductDescriptionPage from "./Pages/ProductDescriptionPage";
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import "./App.css";
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       <Router>
         <Provider store={store}>
           <Routes>
-            <Route exact path="/" element={<ProductListingPage />} />
+            <Route path="/" element={<ProductListingPage />} />
             <Route
               path="/description/:name"
               element={<ProductDescriptionPage />}

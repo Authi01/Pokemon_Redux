@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import "../Product.css";
 import getImageUrl from "../Utils/ImageUrl";
 import { fetchPokemonDetails } from "../Utils/Api";
 // Usedispatch allows access to dispatch function - dispatches the action
@@ -26,7 +25,7 @@ const ProductDescriptionPage = () => {
     };
 
     fetchData();
-  }, [dispatch, name]);
+  }, []);
   // if the data is fetched successfully , we dispatch the setPokemonList action-
   // with the data as its payload
 
@@ -45,17 +44,17 @@ const ProductDescriptionPage = () => {
           />
         </div>
         <div className="pokemon-info">
-          <h1 className="title">{pokemonDetails?.name}</h1>
+          <h1 className="title">{pokemonDetails?.name}</h1>{" "}
           <div className="details">
-            <strong>Height:</strong> {pokemonDetails?.height} decimetres
+            <strong>Height:</strong> {pokemonDetails?.height} decimetres{" "}
           </div>
           <div className="details">
-            <strong>Weight:</strong> {pokemonDetails?.weight} hectograms
+            <strong>Weight:</strong> {pokemonDetails?.weight} hectograms{" "}
           </div>
           <div className="details">
             <strong>Abilities:</strong>
             <ul>
-              {pokemonDetails.abilities.map((ability) => (
+              {pokemonDetails?.abilities.map((ability) => (
                 <li key={ability.ability.name} className="list-item">
                   {ability.ability.name}
                 </li>
@@ -67,6 +66,7 @@ const ProductDescriptionPage = () => {
             <ul>
               {pokemonDetails?.forms.map((form) => (
                 <li key={form?.name} className="list-item">
+                  {" "}
                   {form?.name}
                 </li>
               ))}
